@@ -23,14 +23,16 @@ $blue: #2396b4;
   box-sizing: border-box;
   body {
     .App {
-      padding: 0 90px;
+      //padding: 0 90px;
       overflow-x: hidden;
       .Navbar {
         width: 100%;
         height: 96px;
-        padding: 30px;
+        padding-top: 28px;
+        padding-left: 113px;
         display: flex;
         flex-direction: row;
+        background: transparent;
         .Logo {
           width: 113px;
           height: 28px;
@@ -52,7 +54,9 @@ $blue: #2396b4;
           top: 0;
           right: 0;
           margin-left: auto;
-          padding: 12px;
+          //padding: 12px;
+          margin-top: 28px;
+          margin-right: 113px;
           display: block;
           cursor: pointer;
           .MenuTop {
@@ -90,7 +94,7 @@ $blue: #2396b4;
           height: 84px;*/
           display: inline;
           white-space: nowrap;
-          margin-left: 120px;
+          margin-left: 210px;
           font-family: swansea-bold;
           font-size: 70px;
           font-weight: bold;
@@ -108,7 +112,7 @@ $blue: #2396b4;
           -webkit-text-stroke: 0.6px #e5e5e5;
           font-family: Swansea;
           font-size: 130px;
-          font-weight: bold;
+          font-weight: normal;
           font-stretch: normal;
           font-style: normal;
           line-height: 0.54;
@@ -120,7 +124,7 @@ $blue: #2396b4;
         display: block;
         width: 501px;
         height: 90px;
-        margin-left: 120px;
+        margin-left: 210px;
         font-family: swansea;
         font-size: 20px;
         font-weight: normal;
@@ -131,47 +135,226 @@ $blue: #2396b4;
         color: $darkGrey;
       }
       .Form-container {
+        width: 100%;
+        height: 640px;
         display: flex;
         align-items: center;
         justify-content: left;
-        margin-left: 120px;
         margin-top: 110px;
+        margin-left: 113px;
         .Contact-form {
           width: 1140px;
           height: 640px;
+          padding-left: 80px;
+          padding-right: 120px;
+          padding-top: 77px;
+          /*
           display: grid;
-          grid-template: 35px 35px 35px 113px / auto auto;
+          grid-template: 35px 35px 35px 113px / auto auto;*/
+          display: flex;
+          flex-direction: column;
           background: $whiteAlt;
-          input {
-            width: 100%;
-            background: $whiteAlt;
-            border: none;
-            font-family: swansea;
-            font-size: 16px;
-            font-weight: normal;
+          .field {
+            width: 111px;
+            height: 101px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .input {
+              position: relative;
+              margin-left: 30px;
+              width: 458px;
+              input {
+                font-family: swansea;
+                background: $whiteAlt;
+                outline: none;
+                border: none;
+                padding: 28px 16px 24px 16px;
+              }
+              label {
+                font-family: swansea;
+                position: absolute;
+                transform-origin: top left;
+                transform: translate(0, 25px) scale(1);
+                transition: all 0.1s ease-in-out;
+              }
+              .divider {
+                width: 458px;
+                height: 1px;
+                background: $lighterGrey;
+              }
+              .error {
+                visibility: hidden;
+                color: red;
+              }
+              textarea {
+                border: none;
+                outline: none;
+                background: $whiteAlt;
+                width: 946px;
+                height: 115px;
+              }
+            }
+            .input.active label {
+              transform: translate(0, 4px) scale(0.75);
+            }
+          }
+          .Submit-button {
+            font-family: swansea-bold;
+            background: $black;
+            color: $white;
+            margin-top: 60px;
+            width: 220px;
+            height: 60px;
+            font-size: 18px;
+            font-weight: bold;
             font-stretch: normal;
             font-style: normal;
             line-height: normal;
             letter-spacing: normal;
+          }
+        }
+      }
+      .Locations-container {
+        margin-top: 120px;
+        margin-left: 113px;
+        display: flex;
+        align-items: center;
+        .Location {
+          width: 360px;
+          height: 250px;
+          background: $whiteAlt;
+          h1 {
+            font-family: swansea-bold;
+            font-size: 24px;
+            font-weight: bold;
             color: $black;
+            padding-top: 67px;
+            padding-left: 51px;
           }
-          .Title {
-            grid-column-start: 1;
-            grid-column-end: 3;
+          p {
+            font-size: 18px;
+            font-family: swansea;
+            line-height: 1.67;
+            color: $darkGrey;
+            padding-left: 51px;
+            padding-right: 148px;
           }
-          .Message {
-            grid-column-start: 1;
-            grid-column-end: 3;
-            background: $whiteAlt;
-            border: none;
+        }
+        .Location-zagreb {
+          width: 360px;
+          height: 250px;
+          margin-left: 30px;
+          background: $whiteAlt;
+          h1 {
+            font-family: swansea-bold;
+            font-size: 24px;
+            font-weight: bold;
+            color: $black;
+            padding-top: 67px;
+            padding-left: 51px;
+          }
+          p {
+            font-size: 18px;
+            font-family: swansea;
+            line-height: 1.67;
+            color: $darkGrey;
+            padding-left: 51px;
+            padding-right: 148px;
+          }
+        }
+        .Location-zagreb-black {
+          width: 360px;
+          height: 250px;
+          margin-left: 30px;
+          background: $black;
+          color: $white;
+          h1 {
+            font-family: swansea-bold;
+            font-size: 24px;
+            font-weight: bold;
+            color: $white;
+            padding-top: 67px;
+            padding-left: 51px;
+          }
+          p {
+            font-size: 18px;
+            font-family: swansea;
+            line-height: 1.67;
+            color: $whiteAlt;
+            padding-left: 51px;
+            padding-right: 148px;
+          }
+        }
+      }
+      .footer {
+        width: 100%;
+        height: 419px;
+        background: $black;
+        margin-top: 287px;
+        .field {
+          display: flex;
+          flex-direction: row;
+          .Logo {
+            width: 115px;
+            height: 30px;
+            margin-left: 113px;
+            padding-top: 98px;
+            display: flex;
+            flex-direction: row;
+            .LogoPic {
+              width: 100%;
+              height: 30px;
+              padding-right: 4px;
+              .st0 {
+                fill: $white;
+              }
+            }
+            .LogoTitle {
+              width: 100%;
+              height: 26px;
+              .st0 {
+                fill: $white;
+              }
+            }
+          }
+          ul {
+            margin-top: 92px;
+            margin-left: 187px;
+            list-style-type: none;
+            li {
+              color: $white;
+              font-family: swansea;
+              font-size: 16px;
+              margin-bottom: 20px;
+            }
+          }
+          p {
+            margin-top: 80px;
+            margin-left: 187px;
+            width: 105px;
+            height: 108px;
             font-family: swansea;
             font-size: 16px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: normal;
-            letter-spacing: normal;
-            color: $black;
+            line-height: 1.69;
+            color: $white;
+          }
+          .Trademark {
+            margin-left: 113px;
+            margin-top: 90px;
+            font-family: swansea;
+            font-size: 16px;
+            line-height: 1.69;
+            color: $white;
+          }
+          .Privacy {
+            margin-left: auto;
+            margin-right: 310px;
+            margin-top: 90px;
+            font-family: swansea;
+            font-size: 16px;
+            line-height: 1.69;
+            color: $white;
           }
         }
       }

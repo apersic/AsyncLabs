@@ -1,9 +1,9 @@
 import React from "react";
 
-function Navbar() {
+function Footer() {
   return (
-    <header className="Navbar">
-      <a href="#">
+    <div className="footer">
+      <div className="field">
         <div className="Logo">
           <svg
             version="1.1"
@@ -194,13 +194,29 @@ function Navbar() {
             </g>
           </svg>
         </div>
-      </a>
-      <span className="MenuButton">
-        <div className="MenuTop" />
-        <div className="MenuBottom" />
-      </span>
-    </header>
+        <ul>
+          <li>About</li>
+          <li>Projects</li>
+          <li>Blog</li>
+          <li>Contact</li>
+        </ul>
+        <ul>
+          <li>Facebook</li>
+          <li>LinkedIn</li>
+          <li>Twitter</li>
+          <li>Instagram</li>
+        </ul>
+        <p>Async d.o.o. Lipovečka 1, 10000 Zagreb, Croatia</p>
+        <p>hello@asynclabs.co</p>
+      </div>
+      <div className="field">
+        <span className="Trademark">
+          © Async Labs. All rights reserved 2020.
+        </span>
+        <span className="Privacy">Privacy Policy</span>
+      </div>
+    </div>
   );
 }
 
-export default Navbar;
+export default Footer;
