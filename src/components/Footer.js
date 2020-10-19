@@ -206,7 +206,7 @@ function Footer() {
           <li><a href="https://twitter.com/asynclabsco">Twitter</a></li>
           <li><a href="https://www.instagram.com/asynclabs/?hl=hr">Instagram</a></li>
         </ul>
-        <p>Async d.o.o. Lipovečka 1, 10000 Zagreb, Croatia</p>
+        <p className="Footer-address">Async d.o.o. Lipovečka 1, 10000 Zagreb, Croatia</p>
         <p>hello@asynclabs.co</p>
       </div>
       <div className="field">

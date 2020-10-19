@@ -63,7 +63,7 @@ class ContactForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="View-wrapper">
         <div className="Header-title">
           <h1 className="Header1">Let's talk!</h1>
           <h1 className="Header2">Contact</h1>
@@ -78,12 +78,11 @@ class ContactForm extends React.Component {
             <div className="field" id="field">
               <div className="input" data-targetable="true">
                 <input
-                  required
                   id="name"
                   className="name"
                   name="name"
                   type="text"
-                  placeholder=""
+                  placeholder=" "
                 />
                 <label id="label" htmlFor="name">
                   <span>Your name*</span>
@@ -92,7 +91,7 @@ class ContactForm extends React.Component {
                 <span className="error">This field is required</span>
               </div>
               <div className="input" data-targetable="true">
-                <input required id="email" name="email" type="text" placeholder="" />
+                <input id="email" name="email" type="text" placeholder=" " />
                 <label id="label" htmlFor="email">
                   <span>Email address*</span>
                 </label>
@@ -102,13 +101,7 @@ class ContactForm extends React.Component {
             </div>
             <div className="field" id="field">
               <div className="input" data-targetable="true">
-                <input
-                  required
-                  id="phone"
-                  name="phone"
-                  type="text"
-                  placeholder=""
-                />
+                <input id="phone" name="phone" type="text" placeholder=" " />
                 <label id="label" htmlFor="phone">
                   <span>Phone number</span>
                 </label>
@@ -117,11 +110,10 @@ class ContactForm extends React.Component {
               </div>
               <div className="input" data-targetable="true">
                 <input
-                  required
                   id="company"
                   name="company"
                   type="text"
-                  placeholder=""
+                  placeholder=" "
                 />
                 <label id="label" htmlFor="company">
                   <span>Company</span>
@@ -132,13 +124,7 @@ class ContactForm extends React.Component {
             </div>
             <div className="field" id="field">
               <div className="input" data-targetable="true">
-                <input
-                  required
-                  id="title"
-                  name="title"
-                  type="text"
-                  placeholder=""
-                />
+                <input id="title" name="title" type="text" placeholder=" " />
                 <label id="label" htmlFor="title">
                   <span>Title*</span>
                 </label>
@@ -148,24 +134,25 @@ class ContactForm extends React.Component {
             </div>
             <div className="field" id="field">
               <div className="input" data-targetable="true">
-                <label id="label" htmlFor="message">
-                  <span>Message*</span>
-                </label>
                 <textarea
-                  required
                   id="message"
                   name="message"
                   type="text"
-                  placeholder=""
+                  placeholder=" "
                 />
+                <label className="label-textarea" id="label" htmlFor="message">
+                  <span>Message*</span>
+                </label>
                 <div className="divider"></div>
                 <span className="error">This field is required</span>
               </div>
             </div>
-            <button className="Submit-button">Submit</button>
-            <span className="success" id="success">
-              Form submited.
-            </span>
+            <div className="field">
+              <button className="Submit-button">Submit</button>
+              <span className="success" id="success">
+                Form submited.
+              </span>
+            </div>
           </form>
         </div>
         <div className="Locations-container">
