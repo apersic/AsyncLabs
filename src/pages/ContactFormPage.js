@@ -1,19 +1,72 @@
 import React from "react";
 
 class ContactForm extends React.Component {
-  validation(){
+  constructor(props) {
+    super(props);
+    this.state = { err: true };
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("[ContactFormPage] shouldComponentUpdate");
+    return false;
+  }
+
+  componentDidUpdate() {
+    console.log("[ContactFormPage] componentDidUpdate");
+  }
+
+  checkErrors = () => {
     var errors = document.getElementsByClassName("error");
-    if(document.getElementById("name").innerHTML === ""){
-      alert("Name is required!");
+    console.log(this.state.err);
+    console.log(errors);
+
+    if (document.getElementById("name").value === "") {
+      errors[0].style.visibility = "visible";
+      console.log("[Name] Form error.");
+    } else errors[0].style.visibility = "hidden";
+
+    if (document.getElementById("email").value === "") {
+      errors[1].style.visibility = "visible";
+      console.log("[Email] Form error.");
+    } else errors[1].style.visibility = "hidden";
+
+    if (document.getElementById("title").value === "") {
+      errors[4].style.visibility = "visible";
+      console.log("[Title] Form error.");
+    } else errors[4].style.visibility = "hidden";
+
+    if (document.getElementById("message").value === "") {
+      errors[5].style.visibility = "visible";
+      console.log("[Message] Form error.");
+    } else errors[5].style.visibility = "hidden";
+  };
+
+  handleErrors = () => {
+    if (
+      document.getElementById("name").value !== "" &&
+      document.getElementById("email").value !== "" &&
+      document.getElementById("title").value !== "" &&
+      document.getElementById("message").value !== ""
+    ) {
+      this.checkErrors();
+      document.getElementById("success").style.visibility = "visible";
+    } else {
+      document.getElementById("success").style.visibility = "hidden";
+      this.checkErrors();
     }
+  };
+
+  formSubmit = (e) => {
+    e.preventDefault();
+    this.handleErrors();
   };
 
   render() {
     return (
       <div>
         <div className="Header-title">
-          <h1 className="Lets-talk">Let's talk!</h1>
-          <h1 className="Contact">Contact</h1>
+          <h1 className="Header1">Let's talk!</h1>
+          <h1 className="Header2">Contact</h1>
         </div>
         <span className="Deep-light">
           Deep light land beginning form fish there brought fifth forth earth us
@@ -21,64 +74,98 @@ class ContactForm extends React.Component {
           male his him.
         </span>
         <div className="Form-container">
-          <form className="Contact-form" onSubmit={this.validation}>
+          <form className="Contact-form" onSubmit={this.formSubmit}>
             <div className="field" id="field">
               <div className="input" data-targetable="true">
-                <label id="label" for="name">
+                <input
+                  required
+                  id="name"
+                  className="name"
+                  name="name"
+                  type="text"
+                  placeholder=""
+                />
+                <label id="label" htmlFor="name">
                   <span>Your name*</span>
                 </label>
-                <input id="name" className="name" name="name" type="text" />
                 <div className="divider"></div>
                 <span className="error">This field is required</span>
               </div>
               <div className="input" data-targetable="true">
-                <label id="label" for="email">
+                <input required id="email" name="email" type="text" placeholder="" />
+                <label id="label" htmlFor="email">
                   <span>Email address*</span>
                 </label>
-                <input id="email" name="email" type="text" />
                 <div className="divider"></div>
                 <span className="error">This field is required</span>
               </div>
             </div>
             <div className="field" id="field">
               <div className="input" data-targetable="true">
-                <label id="label" for="phone">
+                <input
+                  required
+                  id="phone"
+                  name="phone"
+                  type="text"
+                  placeholder=""
+                />
+                <label id="label" htmlFor="phone">
                   <span>Phone number</span>
                 </label>
-                <input id="phone" name="phone" type="text" />
                 <div className="divider"></div>
                 <span className="error">This field is required</span>
               </div>
               <div className="input" data-targetable="true">
-                <label id="label" for="company">
+                <input
+                  required
+                  id="company"
+                  name="company"
+                  type="text"
+                  placeholder=""
+                />
+                <label id="label" htmlFor="company">
                   <span>Company</span>
                 </label>
-                <input id="company" name="company" type="text" />
                 <div className="divider"></div>
                 <span className="error">This field is required</span>
               </div>
             </div>
             <div className="field" id="field">
               <div className="input" data-targetable="true">
-                <label id="label" for="title">
+                <input
+                  required
+                  id="title"
+                  name="title"
+                  type="text"
+                  placeholder=""
+                />
+                <label id="label" htmlFor="title">
                   <span>Title*</span>
                 </label>
-                <input id="title" name="title" type="text" />
                 <div className="divider"></div>
                 <span className="error">This field is required</span>
               </div>
             </div>
             <div className="field" id="field">
               <div className="input" data-targetable="true">
-                <label id="label" for="message">
+                <label id="label" htmlFor="message">
                   <span>Message*</span>
                 </label>
-                <textarea id="message" name="message" type="text" />
+                <textarea
+                  required
+                  id="message"
+                  name="message"
+                  type="text"
+                  placeholder=""
+                />
                 <div className="divider"></div>
                 <span className="error">This field is required</span>
               </div>
             </div>
             <button className="Submit-button">Submit</button>
+            <span className="success" id="success">
+              Form submited.
+            </span>
           </form>
         </div>
         <div className="Locations-container">

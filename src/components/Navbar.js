@@ -3,7 +3,7 @@ import React from "react";
 function Navbar() {
   return (
     <header className="Navbar">
-      <a href="#">
+      <a href="/home">
         <div className="Logo">
           <svg
             version="1.1"

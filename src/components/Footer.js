@@ -195,16 +195,16 @@ function Footer() {
           </svg>
         </div>
         <ul>
-          <li>About</li>
-          <li>Projects</li>
-          <li>Blog</li>
-          <li>Contact</li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
         <ul>
-          <li>Facebook</li>
-          <li>LinkedIn</li>
-          <li>Twitter</li>
-          <li>Instagram</li>
+          <li><a href="https://www.facebook.com/asynclabs/">Facebook</a></li>
+          <li><a href="https://hr.linkedin.com/company/async-labs">LinkedIn</a></li>
+          <li><a href="https://twitter.com/asynclabsco">Twitter</a></li>
+          <li><a href="https://www.instagram.com/asynclabs/?hl=hr">Instagram</a></li>
         </ul>
         <p>Async d.o.o. Lipovečka 1, 10000 Zagreb, Croatia</p>
         <p>hello@asynclabs.co</p>
