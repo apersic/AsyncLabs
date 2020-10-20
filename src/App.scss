@@ -1,22 +1,15 @@
 //Colors
-$white: #ffffff;
-$black: #1d1d1d;
-$darkerGrey: #232323;
-$darkGrey: #525252;
-$lightGrey: #bcbcbc;
-$lighterGrey: #d6d6d6;
-$whiteAlt: #f5f5f5;
-$greyAlt: #8a8a8a;
-$blue: #2396b4;
-$horizontal-gutter: 6rem;
-
+$mainLight: #ffffff;
+$mainDark: #1d1d1d;
+$secondaryDark: #232323;
+$secondary: #525252;
+$secondaryLight: #bcbcbc;
+$secondaryLighter: #d6d6d6;
+$highlightLight: #f5f5f5;
+$highlightDark: #8a8a8a;
+$highlightMain: #2396b4;
 // 1. razdvojiti App.scss u komponente (napraviti main.scss u kojem ukljucujes sve komponente)
 // 2. prouciti 7-1 arhitekturu (SASS dokumentacija)
-// 3. maknut sve fiksne velicine (osim u slikama)
-// 4. instalirat bootstrap i ukljucit njegov grid i container u main.scss
-// 5. semanticki nazivi boja (kao naprimjer u material palletu)
-// 6. napraviti neku notataciju za komponente (BEM)
-// 7. maknut ID-eve
 
 @font-face {
   font-family: "swansea";
@@ -39,39 +32,46 @@ $horizontal-gutter: 6rem;
       justify-content: center;
     }
     .App {
-      //padding: 0 90px;
       font-family: swansea;
       overflow-x: hidden;
       .Navbar {
+        position: relative;
+        top: 0;
+        right: 0;
         width: 100%;
         height: 96px;
         padding-top: 28px;
         padding-left: 113px;
-        display: flex;
-        flex-direction: row;
-        background: transparent;
-        .Logo {
-          width: 113px;
-          height: 28px;
-          top: 0;
-          left: 0;
-          .LogoPic {
-            width: 38px;
-            height: 30px;
-            padding-right: 4px;
-          }
-          .LogoTitle {
-            width: 58px;
-            height: 26px;
+        //display: flex;
+        //flex-direction: row;
+        background: white;
+        a {
+          z-index: 20;
+          position: absolute;
+          .Logo {
+            width: 113px;
+            height: 28px;
+            top: 0;
+            left: 0;
+            .LogoPic {
+              width: 38px;
+              height: 30px;
+              padding-right: 4px;
+            }
+            .LogoTitle {
+              width: 58px;
+              height: 26px;
+            }
           }
         }
         .MenuButton {
+          z-index: 20;
           width: 58px;
           height: 36px;
+          position: relative;
           top: 0;
           right: 0;
           margin-left: auto;
-          //padding: 12px;
           margin-top: 28px;
           margin-right: 113px;
           display: block;
@@ -82,14 +82,14 @@ $horizontal-gutter: 6rem;
             margin-bottom: 6px;
             margin-left: auto;
             transition: all 0.5s ease-in-out;
-            background: $black;
+            background: $mainDark;
           }
           .MenuBottom {
             width: 23px;
             height: 2px;
             margin-left: auto;
             transition: all 0.5s ease-in-out;
-            background: $black;
+            background: $mainDark;
           }
           &:hover {
             .MenuTop {
@@ -98,6 +98,20 @@ $horizontal-gutter: 6rem;
             .MenuBottom {
               width: 34px;
             }
+          }
+        }
+        .Single-service-banner {
+          width: 100%;
+          height: 450px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: flex;
+          justify-content: center;
+          visibility: hidden;
+          img {
+            width: 100%;
+            height: 100%;
           }
         }
       }
@@ -109,8 +123,8 @@ $horizontal-gutter: 6rem;
           /**
           width: 304px;
           height: 84px;*/
-          display: inline;
-          white-space: nowrap;
+          //display: inline;
+          //white-space: nowrap;
           margin-left: 210px;
           font-family: swansea-bold;
           font-size: 70px;
@@ -120,12 +134,13 @@ $horizontal-gutter: 6rem;
           line-height: 1.2;
           letter-spacing: normal;
           color: #1d1d1d;
+          display: inline-block;
+          flex-shrink: 0;
+          white-space: normal;
+          width: 720px;
+          height: 168px;
         }
         .Header2 {
-          /**
-          width: 376px;
-          height: 70px;*/
-          margin-left: 880px;
           -webkit-text-stroke: 0.6px #e5e5e5;
           font-family: Swansea;
           font-size: 130px;
@@ -135,20 +150,11 @@ $horizontal-gutter: 6rem;
           line-height: 1;
           letter-spacing: normal;
           color: rgba(18, 18, 18, 0);
+          display: inline-block;
+          flex-shrink: 0;
+          margin-left: 200px;
+          margin-bottom: 60px;
         }
-      }
-      #Services-title {
-        display: inline-block;
-        flex-shrink: 0;
-        white-space: normal;
-        width: 720px;
-        height: 168px;
-      }
-      #Services-title2 {
-        display: inline-block;
-        flex-shrink: 0;
-        margin-left: 200px;
-        margin-bottom: 60px;
       }
       .Deep-light {
         display: block;
@@ -162,7 +168,7 @@ $horizontal-gutter: 6rem;
         font-style: normal;
         line-height: 1.5;
         letter-spacing: normal;
-        color: $darkGrey;
+        color: $secondary;
       }
       .Form-container {
         width: 100%;
@@ -177,12 +183,9 @@ $horizontal-gutter: 6rem;
           padding-left: 60px;
           padding-right: 120px;
           padding-top: 77px;
-          /*
-          display: grid;
-          grid-template: 35px 35px 35px 113px / auto auto;*/
           display: flex;
           flex-direction: column;
-          background: $whiteAlt;
+          background: $highlightLight;
           .field {
             width: 100%;
             display: flex;
@@ -198,24 +201,20 @@ $horizontal-gutter: 6rem;
                 width: 100%;
                 font-family: swansea;
                 font-size: 1rem;
-                background: $whiteAlt;
+                background: $highlightLight;
                 outline: none;
                 border: none;
                 padding: 28px 16px 24px 16px;
               }
               input:focus + label {
                 transform: translateY(-2rem);
-              } /*
-              input:valid + label {
-                transform: translateY(-2rem);
-              }*/
+              }
               input:focus ~ label,
               input:not(:placeholder-shown) ~ label {
                 transform: translateY(-2rem);
               }
               label {
                 font-family: swansea;
-                //visibility: hidden;
                 position: absolute;
                 top: 50%;
                 left: 12px;
@@ -225,7 +224,7 @@ $horizontal-gutter: 6rem;
               .divider {
                 width: inherit;
                 height: 1px;
-                background: $lighterGrey;
+                background: $secondaryLighter;
               }
               .error {
                 visibility: hidden;
@@ -245,7 +244,7 @@ $horizontal-gutter: 6rem;
                 padding: 16px;
                 border: none;
                 outline: none;
-                background: $whiteAlt;
+                background: $highlightLight;
                 width: 100%;
                 height: 115px;
               }
@@ -256,10 +255,11 @@ $horizontal-gutter: 6rem;
             }
           }
           .Submit-button {
+            cursor: pointer;
             font-family: swansea-bold;
             border: none;
-            background: $black;
-            color: $white;
+            background: $mainDark;
+            color: $mainLight;
             margin-top: 60px;
             width: 220px;
             height: 60px;
@@ -271,7 +271,7 @@ $horizontal-gutter: 6rem;
             letter-spacing: normal;
           }
           .success {
-            color: $blue;
+            color: $highlightMain;
             margin-top: 10px;
             margin-left: 10px;
             visibility: hidden;
@@ -280,6 +280,7 @@ $horizontal-gutter: 6rem;
       }
       .Locations-container {
         margin-top: 120px;
+        margin-bottom: 287px;
         padding-left: 20px;
         padding-right: 20px;
         display: flex;
@@ -288,12 +289,12 @@ $horizontal-gutter: 6rem;
         .Location {
           width: 360px;
           height: 250px;
-          background: $whiteAlt;
+          background: $highlightLight;
           h1 {
             font-family: swansea-bold;
             font-size: 24px;
             font-weight: bold;
-            color: $black;
+            color: $mainDark;
             padding-top: 67px;
             padding-left: 51px;
           }
@@ -301,7 +302,7 @@ $horizontal-gutter: 6rem;
             font-size: 18px;
             font-family: swansea;
             line-height: 1.67;
-            color: $darkGrey;
+            color: $secondary;
             padding-left: 51px;
             padding-right: 148px;
           }
@@ -310,12 +311,12 @@ $horizontal-gutter: 6rem;
           width: 360px;
           height: 250px;
           margin-left: 30px;
-          background: $whiteAlt;
+          background: $highlightLight;
           h1 {
             font-family: swansea-bold;
             font-size: 24px;
             font-weight: bold;
-            color: $black;
+            color: $mainDark;
             padding-top: 67px;
             padding-left: 51px;
           }
@@ -323,7 +324,7 @@ $horizontal-gutter: 6rem;
             font-size: 18px;
             font-family: swansea;
             line-height: 1.67;
-            color: $darkGrey;
+            color: $secondary;
             padding-left: 51px;
             padding-right: 148px;
           }
@@ -332,13 +333,13 @@ $horizontal-gutter: 6rem;
           width: 360px;
           height: 250px;
           margin-left: 30px;
-          background: $black;
-          color: $white;
+          background: $mainDark;
+          color: $mainLight;
           h1 {
             font-family: swansea-bold;
             font-size: 24px;
             font-weight: bold;
-            color: $white;
+            color: $mainLight;
             padding-top: 67px;
             padding-left: 51px;
           }
@@ -346,16 +347,17 @@ $horizontal-gutter: 6rem;
             font-size: 18px;
             font-family: swansea;
             line-height: 1.67;
-            color: $whiteAlt;
+            color: $highlightLight;
             padding-left: 51px;
             padding-right: 148px;
           }
         }
       }
       .footer {
+        z-index: 25;
         width: 100%;
         height: 419px;
-        background: $black;
+        background: $mainDark;
         .field {
           display: flex;
           flex-direction: row;
@@ -371,14 +373,14 @@ $horizontal-gutter: 6rem;
               height: 30px;
               padding-right: 4px;
               .st0 {
-                fill: $white;
+                fill: $mainLight;
               }
             }
             .LogoTitle {
               width: 100%;
               height: 26px;
               .st0 {
-                fill: $white;
+                fill: $mainLight;
               }
             }
           }
@@ -387,7 +389,7 @@ $horizontal-gutter: 6rem;
             margin-left: 187px;
             list-style-type: none;
             li {
-              color: $white;
+              color: $mainLight;
               font-family: swansea;
               font-size: 16px;
               margin-bottom: 20px;
@@ -402,16 +404,19 @@ $horizontal-gutter: 6rem;
           }
           p {
             margin-top: 80px;
-            margin-left: 187px;
+            margin-left: 250px;
             width: 105px;
             height: 108px;
             font-family: swansea;
             font-size: 16px;
             line-height: 1.69;
-            color: $white;
+            color: $mainLight;
+          }
+          .Footer-mail{
+            margin-right: 50px;
           }
           .Footer-address {
-            margin-right: 300px;
+            //margin-right: 300px;
           }
           .Trademark {
             margin-left: 113px;
@@ -419,7 +424,7 @@ $horizontal-gutter: 6rem;
             font-family: swansea;
             font-size: 16px;
             line-height: 1.69;
-            color: $white;
+            color: $mainLight;
           }
           .Privacy {
             margin-left: auto;
@@ -428,7 +433,7 @@ $horizontal-gutter: 6rem;
             font-family: swansea;
             font-size: 16px;
             line-height: 1.69;
-            color: $white;
+            color: $mainLight;
           }
         }
       }
@@ -479,6 +484,7 @@ $horizontal-gutter: 6rem;
             .Service-domains {
               margin-top: 37px;
               li {
+                text-transform: uppercase;
                 padding-bottom: 22px;
                 font-family: swansea-bold;
                 font-size: 13px;
@@ -543,6 +549,7 @@ $horizontal-gutter: 6rem;
             .Service-domains {
               margin-top: 37px;
               li {
+                text-transform: uppercase;
                 padding-bottom: 22px;
                 font-family: swansea-bold;
                 font-size: 13px;
@@ -568,11 +575,13 @@ $horizontal-gutter: 6rem;
       .Banner-procces {
         width: 100%;
         height: 568px;
-        background: $black;
+        background: $mainDark;
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        padding-right: 150px;
+        padding-bottom: 50px;
         .Procces-wrapper {
           width: 100%;
           display: flex;
@@ -597,15 +606,15 @@ $horizontal-gutter: 6rem;
             }
             .Procces-name {
               width: 100%;
-              color: $white;
+              color: $mainLight;
               font-size: 24px;
               position: relative;
               left: 50%;
               top: 50%;
               z-index: 2;
             }
-            .Procces-description{
-              color: $white;
+            .Procces-description {
+              color: $mainLight;
               font-family: swansea;
               position: absolute;
               left: 50%;
@@ -630,14 +639,14 @@ $horizontal-gutter: 6rem;
           font-size: 46px;
           line-height: 1.26;
           text-align: center;
-          color: $white;
+          color: $mainLight;
         }
         .Get-in-touch-description {
           font-family: swansea;
           font-size: 20px;
           line-height: 1.5;
           text-align: center;
-          color: $white;
+          color: $mainLight;
           margin-bottom: 41px;
           margin-top: 41px;
         }
@@ -649,19 +658,271 @@ $horizontal-gutter: 6rem;
         .Get-in-touch-button {
           width: 220px;
           height: 60px;
-          background: $white;
-          color: $black;
+          background: $mainLight;
+          color: $mainDark;
           border: none;
           outline: none;
           font-family: swansea-bold;
           font-size: 18px;
-          background: linear-gradient(to right, $white 50%, $black 50%);
+          background: linear-gradient(to right, $mainLight 50%, $mainDark 50%);
           background-size: 200%;
           transition: 0.5s ease-out;
         }
         .Get-in-touch-button:hover {
           background-position: right;
-          color: $white;
+          color: $mainLight;
+        }
+      }
+      .View-wrapper-single-service {
+        margin-top: 450px;
+      }
+      .Single-service-content {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-top: 117px;
+        padding-left: 217px;
+        padding-right: 217px;
+        .Single-service-header {
+          h4 {
+            text-transform: uppercase;
+            font-family: swansea-bold;
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: $highlightMain;
+            margin-bottom: 29px;
+          }
+          h3 {
+            color: $mainDark;
+            font-family: swansea-bold;
+            font-size: 26px;
+            line-height: 1.54;
+            margin-right: 30px;
+          }
+        }
+        .Single-service-description {
+          margin-left: 120px;
+          margin-right: 70px;
+          margin-top: 45px;
+          p {
+            margin-bottom: 30px;
+            font-family: swansea;
+            font-size: 20px;
+            line-height: 1.5;
+            color: $secondary;
+          }
+          ul {
+            margin-top: 47px;
+            list-style-type: cjk-ideographic;
+            li {
+              text-transform: uppercase;
+              font-family: swansea-bold;
+              font-size: 13px;
+              letter-spacing: 2px;
+              color: $mainDark;
+              margin-bottom: 22px;
+            }
+          }
+        }
+      }
+      .Work {
+        width: 100%;
+        min-height: 1327px;
+        position: relative;
+        margin-top: 302px;
+        margin-bottom: 300px;
+        padding-right: 217px;
+        padding-left: 217px;
+        h1 {
+          font-family: swansea-bold;
+          font-size: 130px;
+          line-height: 0.45;
+          color: $mainDark;
+          position: absolute;
+          top: 0;
+          right: 553px;
+        }
+        .Work-img-1 {
+          width: 361px;
+          height: 420px;
+          position: absolute;
+          top: 80px;
+          bottom: 0;
+        }
+        .Work-img-1::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          content: "";
+          font-family: swansea-bold;
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $mainLight;
+          transition: all 0.5s ease-in-out;
+        }
+        .Work-img-1:hover::after {
+          background-color: rgba(35, 150, 180, 0.5);
+          content: "Frontend Development";
+        }
+        .Work-img-2 {
+          width: 488px;
+          height: 320px;
+          position: absolute;
+          right: 217px;
+          top: 220px;
+          bottom: 0;
+        }
+        .Work-img-2::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          content: "";
+          font-family: swansea-bold;
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $mainLight;
+          transition: all 0.5s ease-in-out;
+        }
+        .Work-img-2:hover::after {
+          background-color: rgba(35, 150, 180, 0.5);
+          content: "Backend Development";
+        }
+        .Work-img-3 {
+          width: 488px;
+          height: 320px;
+          position: absolute;
+          top: 650px;
+          bottom: 0;
+        }
+        .Work-img-3::after {
+          position: absolute;
+          top: 9px;
+          left: 9px;
+          width: 100%;
+          height: 100%;
+          content: "";
+          font-family: swansea-bold;
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $mainLight;
+          transition: all 0.5s ease-in-out;
+        }
+        .Work-img-3:hover::after {
+          background-color: rgba(35, 150, 180, 0.5);
+          content: "Mobile App";
+        }
+        .Work-img-4 {
+          width: 361px;
+          height: 420px;
+          position: absolute;
+          right: 217px;
+          top: 770px;
+          bottom: 0;
+        }
+        .Work-img-4::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          content: "";
+          font-family: swansea-bold;
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $mainLight;
+          transition: all 0.5s ease-in-out;
+        }
+        .Work-img-4:hover::after {
+          background-color: rgba(35, 150, 180, 0.5);
+          content: "Design";
+        }
+        .See-all-projects{
+          cursor: pointer;
+          font-size: 16px;
+          max-height: 30px;
+          font-family: swansea-bold;
+          position: absolute;
+          color: $mainDark;
+          top: 1100px;
+          bottom: 0;
+        }
+        .See-all-projects:hover{
+          text-decoration: underline;
+        }
+      }
+      .Single-service-bottom-banner {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        flex-direction: row;
+        .Development {
+          position: relative;
+          height: 100%;
+          width: 50%;
+          min-height: 400px;
+          min-width: 683px;
+          background: url("./assets/1@2x.png") no-repeat center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          h2 {
+            font-family: swansea-bold;
+            font-size: 18px;
+            color: $mainLight;
+          }
+        }
+        .Development::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          content: "";
+          transition: all 0.5s ease-in-out;
+        }
+        .Development:hover::after {
+          background-color: rgba(35, 150, 180, 0.5);
+        }
+        .Marketing {
+          position: relative;
+          height: 100%;
+          width: 50%;
+          min-height: 400px;
+          min-width: 683px;
+          background: url("./assets/2@3x\(1\).png") no-repeat;
+          background-size: 100% 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          h2 {
+            font-family: swansea-bold;
+            font-size: 18px;
+            color: $mainLight;
+          }
+        }
+        .Marketing:after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          content: "";
+          width: 100%;
+          height: 100%;
+          transition: all 0.5s ease-in-out;
+        }
+        .Marketing:hover::after {
+          background-color: rgba(35, 150, 180, 0.5);
         }
       }
     }

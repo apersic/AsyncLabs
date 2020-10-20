@@ -1,0 +1,36 @@
+.Header-title {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  .Header1 {
+    margin-left: 210px;
+    font-family: swansea-bold;
+    font-size: 70px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: #1d1d1d;
+    display: inline-block;
+    flex-shrink: 0;
+    white-space: normal;
+    width: 720px;
+    height: 168px;
+  }
+  .Header2 {
+    -webkit-text-stroke: 0.6px #e5e5e5;
+    font-family: Swansea;
+    font-size: 130px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: rgba(18, 18, 18, 0);
+    display: inline-block;
+    flex-shrink: 0;
+    margin-left: 200px;
+    margin-bottom: 60px;
+  }
+}

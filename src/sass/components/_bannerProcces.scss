@@ -1,0 +1,53 @@
+.Banner-procces {
+  width: 100%;
+  height: 568px;
+  background: $mainDark;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-right: 150px;
+  padding-bottom: 50px;
+  .Procces-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .Procces {
+      position: relative;
+      width: 100%;
+      .Procces-image {
+        width: 145px;
+        height: 75px;
+        position: absolute;
+        left: 50%;
+        top: -100%;
+        z-index: 1;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .Procces-name {
+        width: 100%;
+        color: $mainLight;
+        font-size: 24px;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        z-index: 2;
+      }
+      .Procces-description {
+        color: $mainLight;
+        font-family: swansea;
+        position: absolute;
+        left: 50%;
+        bottom: 0px;
+        top: 79px;
+        line-height: 1.5;
+      }
+    }
+  }
+}

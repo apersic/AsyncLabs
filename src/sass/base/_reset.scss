@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  body {
+    .View-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .App {
+      font-family: swansea;
+      overflow-x: hidden;
+    }
+  }
+}

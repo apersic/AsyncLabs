@@ -1,148 +1,88 @@
 import React from "react";
+import PageHeader from "../components/PageHeader";
+import Service1 from "../components/Service1";
+import Service2 from "../components/Service2";
+import BannerProcces from "../components/BannerProcces";
+import BannerGetInTouch from "../components/BannerGetInTouch";
 
 function ServicesPage() {
+  const data = [
+    {
+      id: 1,
+      url1: "2.png",
+      url2: "1.png",
+      name: "Software & App Development",
+      description:
+        "Delivering tailored engineering solutions to your business challenges, whether it is architectural design or web application development.",
+      domains: [
+        "FRONTEND DEVELOPMENT",
+        "BACKEND DEVELOPMENT",
+        "MOBILE DEVELOPMENT",
+        "BLOCKCHAIN DEVELOPMENT",
+      ],
+    },
+    {
+      id: 2,
+      url1: "2(1).png",
+      url2: "1-2.png",
+      name: "Product Marketing",
+      description:
+        "Your potential users are already here. We can help you reach them through different marketing channels and convert them to profitable customers.",
+      domains: [
+        "SEO & Search Marketing",
+        "Social Media Marketing",
+        "Content Marketing",
+        "Inbound Marketing",
+        "Paid Advertising",
+      ],
+    },
+    {
+      id: 3,
+      url1: "2-2.png",
+      url2: "1-3.png",
+      name: "Digital Design",
+      description:
+        "From UX to visual design, we create digital products people love to use.",
+      domains: [
+        "User Interface Design",
+        "User Experience Design",
+        "Graphic Design",
+      ],
+    },
+  ];
+
   return (
     <div className="View-wrapper">
-      <div className="Header-title">
-        <h1 className="Header1" id="Services-title">
-          Building from idea to implementation
-        </h1>
-        <h1 className="Header2" id="Services-title2">
-          Services
-        </h1>
-      </div>
+      <PageHeader header1="Building from idea to implementation" header2="Services"/>
       <div className="Services-view-wrapper">
-        <div className="Service1">
-          <div className="Service-images">
-            <img
-              className="Service-img-back"
-              src={require("../assets/2.png")}
-              alt="Service img 2"
-            />
-            <img
-              className="Service-img-front"
-              src={require("../assets/1.png")}
-              alt="Service img 1"
-            />
-          </div>
-          <div className="Service-content">
-            <h2 className="Service-name">Software & App Development</h2>
-            <p className="Service-description">
-              Delivering tailored engineering solutions to your business
-              challenges, whether it is architectural design or web application
-              development.
-            </p>
-            <ul className="Service-domains">
-              <li>FRONTEND DEVELOPMENT</li>
-              <li>BACKEND DEVELOPMENT</li>
-              <li>MOBILE DEVELOPMENT</li>
-              <li>BLOCKCHAIN DEVELOPMENT</li>
-            </ul>
-            <button className="View-service-button">View service</button>
-          </div>
-        </div>
-        <div className="Service2">
-          <div className="Service-content">
-            <h2 className="Service-name">Software & App Development</h2>
-            <p className="Service-description">
-              Delivering tailored engineering solutions to your business
-              challenges, whether it is architectural design or web application
-              development.
-            </p>
-            <ul className="Service-domains">
-              <li>FRONTEND DEVELOPMENT</li>
-              <li>BACKEND DEVELOPMENT</li>
-              <li>MOBILE DEVELOPMENT</li>
-              <li>BLOCKCHAIN DEVELOPMENT</li>
-            </ul>
-            <button className="View-service-button">View service</button>
-          </div>
-          <div className="Service-images">
-            <img
-              className="Service-img-back"
-              src={require("../assets/2.png")}
-              alt="Service img 2"
-            />
-            <img
-              className="Service-img-front"
-              src={require("../assets/1.png")}
-              alt="Service img 1"
-            />
-          </div>
-        </div>
-        <div className="Service1">
-          <div className="Service-images">
-            <img
-              className="Service-img-back"
-              src={require("../assets/2.png")}
-              alt="Service img 2"
-            />
-            <img
-              className="Service-img-front"
-              src={require("../assets/1.png")}
-              alt="Service img 1"
-            />
-          </div>
-          <div className="Service-content">
-            <h2 className="Service-name">Software & App Development</h2>
-            <p className="Service-description">
-              Delivering tailored engineering solutions to your business
-              challenges, whether it is architectural design or web application
-              development.
-            </p>
-            <ul className="Service-domains">
-              <li>FRONTEND DEVELOPMENT</li>
-              <li>BACKEND DEVELOPMENT</li>
-              <li>MOBILE DEVELOPMENT</li>
-              <li>BLOCKCHAIN DEVELOPMENT</li>
-            </ul>
-            <button className="View-service-button">View service</button>
-          </div>
-        </div>
+        {data.map((service, id) => {
+          if (id % 2 === 0) {
+            return (
+              <Service1
+                id={service.id}
+                url1={service.url1}
+                url2={service.url2}
+                name={service.name}
+                description={service.description}
+                domains={service.domains}
+              />
+            );
+          } else {
+            return (
+              <Service2
+                id={service.id}
+                url1={service.url1}
+                url2={service.url2}
+                name={service.name}
+                description={service.description}
+                domains={service.domains}
+              />
+            );
+          }
+        })}
       </div>
-      <div className="Banner-procces">
-        <div className="Procces-wrapper">
-          <div className="Procces">
-            <div className="Procces-image">
-              <img src={require("../assets/1(1).png")} alt="Procces 1"></img>
-            </div>
-            <h3 className="Procces-name">Analysis & Idea</h3>
-            <span className="Procces-description">
-              Branding and digital are forte, given the state of the world,
-              think.
-            </span>
-          </div>
-        </div>
-        <div className="Procces-wrapper">
-          <div className="Procces">
-            <div className="Procces-image">
-              <img src={require("../assets/02.png")} alt="Procces 1"></img>
-            </div>
-            <h3 className="Procces-name">Design & Development</h3>
-            <span className="Procces-description">
-              Dominion it air bearing subdue seed very wherein, moving seas.
-            </span>
-          </div>
-        </div>
-        <div className="Procces-wrapper">
-          <div className="Procces">
-            <div className="Procces-image">
-              <img src={require("../assets/3.png")} alt="Procces 1"></img>
-            </div>
-            <h3 className="Procces-name">Testing & Launch</h3>
-            <span className="Procces-description">
-              Land very had you and god make void forth said all and greater.
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className="Banner-get-in-touch">
-        <h2 className="Get-in-touch-title">
-          Interested in discussing a project?
-        </h2>
-        <p className="Get-in-touch-description"></p>
-        <button className="Get-in-touch-button">Get in touch</button>
-      </div>
+      <BannerProcces />
+      <BannerGetInTouch />
     </div>
   );
 }

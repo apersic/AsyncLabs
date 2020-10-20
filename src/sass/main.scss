@@ -1,0 +1,20 @@
+@import 'abstracts/variables';
+
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'layout/navigation';
+@import 'layout/footer';
+
+@import 'components/bannerGetInTouch';
+@import 'components/bannerProcces';
+@import 'components/deepLight';
+@import 'components/locations';
+@import 'components/pageHeader';
+@import 'components/singleServiceBottomBanner';
+@import 'components/singleServiceContent';
+@import 'components/work';
+
+@import 'pages/services';
+@import 'pages/singleService';
+@import 'pages/contact';

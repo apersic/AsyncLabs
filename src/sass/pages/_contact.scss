@@ -1,0 +1,108 @@
+.Form-container {
+  width: 100%;
+  height: 640px;
+  display: flex;
+  margin-top: 110px;
+  padding-left: 113px;
+  padding-right: 113px;
+  .Contact-form {
+    width: 100%;
+    height: 640px;
+    padding-left: 60px;
+    padding-right: 120px;
+    padding-top: 77px;
+    display: flex;
+    flex-direction: column;
+    background: $highlightLight;
+    .field {
+      width: 100%;
+      display: flex;
+      margin-bottom: 5px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      .input {
+        position: relative;
+        margin-left: 30px;
+        width: 100%;
+        input {
+          width: 100%;
+          font-family: swansea;
+          font-size: 1rem;
+          background: $highlightLight;
+          outline: none;
+          border: none;
+          padding: 28px 16px 24px 16px;
+        }
+        input:focus + label {
+          transform: translateY(-2rem);
+        }
+        input:focus ~ label,
+        input:not(:placeholder-shown) ~ label {
+          transform: translateY(-2rem);
+        }
+        label {
+          font-family: swansea;
+          position: absolute;
+          top: 50%;
+          left: 12px;
+          transform: translateY(-12px);
+          transition: all 0.1s ease-in-out;
+        }
+        .divider {
+          width: inherit;
+          height: 1px;
+          background: $secondaryLighter;
+        }
+        .error {
+          visibility: hidden;
+          color: red;
+        }
+        .label-textarea {
+          font-family: swansea;
+          //visibility: hidden;
+          position: absolute;
+          top: 25%;
+          left: 15px;
+          transform: translateY(-12px);
+          transition: all 0.1s ease-in-out;
+        }
+        textarea {
+          resize: none;
+          padding: 16px;
+          border: none;
+          outline: none;
+          background: $highlightLight;
+          width: 100%;
+          height: 115px;
+        }
+        textarea:focus ~ label,
+        textarea:not(:placeholder-shown) ~ label {
+          transform: translateY(-2rem);
+        }
+      }
+    }
+    .Submit-button {
+      cursor: pointer;
+      font-family: swansea-bold;
+      border: none;
+      background: $mainDark;
+      color: $mainLight;
+      margin-top: 60px;
+      width: 220px;
+      height: 60px;
+      font-size: 18px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+    }
+    .success {
+      color: $highlightMain;
+      margin-top: 10px;
+      margin-left: 10px;
+      visibility: hidden;
+    }
+  }
+}

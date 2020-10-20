@@ -1,6 +1,9 @@
 import React from "react";
+import PageHeader from "../components/PageHeader";
+import DeepLight from "../components/DeepLight";
+import Locations from "../components/Locations";
 
-class ContactForm extends React.Component {
+class ContactFormPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = { err: true };
@@ -64,15 +67,8 @@ class ContactForm extends React.Component {
   render() {
     return (
       <div className="View-wrapper">
-        <div className="Header-title">
-          <h1 className="Header1">Let's talk!</h1>
-          <h1 className="Header2">Contact</h1>
-        </div>
-        <span className="Deep-light">
-          Deep light land beginning form fish there brought fifth forth earth us
-          make cattle seasons every spirit one can't behold, creepeth fish thing
-          male his him.
-        </span>
+        <PageHeader header1="Let’s talk" header2="Contact"/>
+        <DeepLight />
         <div className="Form-container">
           <form className="Contact-form" onSubmit={this.formSubmit}>
             <div className="field" id="field">
@@ -155,23 +151,10 @@ class ContactForm extends React.Component {
             </div>
           </form>
         </div>
-        <div className="Locations-container">
-          <div className="Location">
-            <h1>London, UK</h1>
-            <p>Vlaška ulica, 70 E hello@asynclabs.co +385 99 4936 071</p>
-          </div>
-          <div className="Location-zagreb">
-            <h1>Zagreb, Croatia</h1>
-            <p>Vlaška ulica, 70 E hello@asynclabs.co +385 99 4936 071</p>
-          </div>
-          <div className="Location-zagreb-black">
-            <h1>Zagreb, Croatia</h1>
-            <p>Lipovečka, 1 hello@asynclabs.co +385 99 4936 071</p>
-          </div>
-        </div>
+        <Locations />
       </div>
     );
   }
 }
 
-export default ContactForm;
+export default ContactFormPage;

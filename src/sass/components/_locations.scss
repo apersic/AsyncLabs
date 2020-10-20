@@ -1,0 +1,75 @@
+.Locations-container {
+  margin-top: 120px;
+  margin-bottom: 287px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .Location {
+    width: 360px;
+    height: 250px;
+    background: $highlightLight;
+    h1 {
+      font-family: swansea-bold;
+      font-size: 24px;
+      font-weight: bold;
+      color: $mainDark;
+      padding-top: 67px;
+      padding-left: 51px;
+    }
+    p {
+      font-size: 18px;
+      font-family: swansea;
+      line-height: 1.67;
+      color: $secondary;
+      padding-left: 51px;
+      padding-right: 148px;
+    }
+  }
+  .Location-zagreb {
+    width: 360px;
+    height: 250px;
+    margin-left: 30px;
+    background: $highlightLight;
+    h1 {
+      font-family: swansea-bold;
+      font-size: 24px;
+      font-weight: bold;
+      color: $mainDark;
+      padding-top: 67px;
+      padding-left: 51px;
+    }
+    p {
+      font-size: 18px;
+      font-family: swansea;
+      line-height: 1.67;
+      color: $secondary;
+      padding-left: 51px;
+      padding-right: 148px;
+    }
+  }
+  .Location-zagreb-black {
+    width: 360px;
+    height: 250px;
+    margin-left: 30px;
+    background: $mainDark;
+    color: $mainLight;
+    h1 {
+      font-family: swansea-bold;
+      font-size: 24px;
+      font-weight: bold;
+      color: $mainLight;
+      padding-top: 67px;
+      padding-left: 51px;
+    }
+    p {
+      font-size: 18px;
+      font-family: swansea;
+      line-height: 1.67;
+      color: $highlightLight;
+      padding-left: 51px;
+      padding-right: 148px;
+    }
+  }
+}

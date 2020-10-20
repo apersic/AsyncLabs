@@ -1,0 +1,49 @@
+.Single-service-content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 117px;
+  padding-left: 217px;
+  padding-right: 217px;
+  .Single-service-header {
+    h4 {
+      text-transform: uppercase;
+      font-family: swansea-bold;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: $highlightMain;
+      margin-bottom: 29px;
+    }
+    h3 {
+      color: $mainDark;
+      font-family: swansea-bold;
+      font-size: 26px;
+      line-height: 1.54;
+      margin-right: 30px;
+    }
+  }
+  .Single-service-description {
+    margin-left: 120px;
+    margin-right: 70px;
+    margin-top: 45px;
+    p {
+      margin-bottom: 30px;
+      font-family: swansea;
+      font-size: 20px;
+      line-height: 1.5;
+      color: $secondary;
+    }
+    ul {
+      margin-top: 47px;
+      list-style-type: cjk-ideographic;
+      li {
+        text-transform: uppercase;
+        font-family: swansea-bold;
+        font-size: 13px;
+        letter-spacing: 2px;
+        color: $mainDark;
+        margin-bottom: 22px;
+      }
+    }
+  }
+}
