@@ -13,9 +13,12 @@ function App() {
       <Navbar />
       <div className="Main-content">
         <Switch>
+          <Route path="/" exact component={ContactFormPage} />
           <Route path="/services" exact component={ServicesPage} />
-          <Route path="/contact" component={ContactFormPage} />
-          <Route path="/single-service/:id" component={SingleServicePage}></Route>
+          <Route
+            path="/single-service/:id"
+            component={SingleServicePage}
+          ></Route>
         </Switch>
       </div>
       <Footer />
