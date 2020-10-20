@@ -60,4 +60,13 @@
   .Marketing:hover::after {
     background-color: rgba(35, 150, 180, 0.5);
   }
+  .Arrow-icon-white{
+    min-width: 15px;
+    min-height: 13px;
+    background: url("../../assets/path-white.svg") center no-repeat;
+    margin-left: 5px;
+  }
+  .Arrow-icon-white::after{
+    content: "";
+  }
 }

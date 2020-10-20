@@ -18,6 +18,7 @@ function Work() {
       </div>
       <div className="See-all-projects">
         <h4>See all projects</h4>
+        <div className="Arrow-icon"></div>
       </div>
     </div>
   );

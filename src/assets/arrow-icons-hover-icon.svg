@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 80 80">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g transform="translate(-456 -2176) translate(0 2020) translate(405 120) translate(51 36)">
+                        <circle stroke="#FFF" stroke-width="2" style="mix-blend-mode:difference" cx="40" cy="40" r="40"/>
+                        <path fill="#FFF" fill-rule="nonzero" style="mix-blend-mode:difference" d="M51 40.438L35.75 40.438 42.75 34.487 41 33 31 41.5 41 50 42.75 48.513 35.75 42.563 51 42.563z" transform="rotate(135 41 41.5)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
