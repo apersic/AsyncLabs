@@ -6,10 +6,14 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  a{
+    text-decoration: none;
+  }
   .Location {
     width: 360px;
     height: 250px;
     background: $highlightLight;
+    margin-left: 30px;
     h1 {
       font-family: swansea-bold;
       font-size: 24px;
@@ -30,7 +34,7 @@
   .Location-zagreb {
     width: 360px;
     height: 250px;
-    margin-left: 30px;
+    margin-left: 0px;
     background: $highlightLight;
     h1 {
       font-family: swansea-bold;
@@ -52,7 +56,8 @@
   .Location-zagreb-black {
     width: 360px;
     height: 250px;
-    margin-left: 30px;
+    margin-left: 0px;
+    margin-right: 25px;
     background: $mainDark;
     color: $mainLight;
     h1 {
@@ -70,6 +75,22 @@
       color: $highlightLight;
       padding-left: 51px;
       padding-right: 148px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .Locations-container{
+    flex-direction: column;
+    align-items: center;
+    .Location{
+      margin: 0px;
+    }
+    .Location-zagreb-black{
+      margin: 0px;
+    }
+    .Location-zagreb{
+      margin: 0px;
     }
   }
 }

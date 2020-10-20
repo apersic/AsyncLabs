@@ -79,3 +79,15 @@
     }
   }
 }
+
+@media only screen and (max-width: 1340px) {
+  .footer {
+    height: 100%;
+    .field{
+      flex-direction: column;
+    }
+    .Footer-adress{
+      margin-left: 188px;
+    }
+  }
+}

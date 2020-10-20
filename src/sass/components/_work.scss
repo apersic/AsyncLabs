@@ -133,17 +133,73 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    .Arrow-icon{
+    .Arrow-icon {
       min-width: 15px;
       min-height: 13px;
       background: url("../../assets/path.svg") center no-repeat;
       margin-left: 5px;
     }
-    .Arrow-icon::after{
+    .Arrow-icon::after {
       content: "";
     }
   }
   .See-all-projects:hover {
     text-decoration: underline;
+  }
+}
+
+@media only screen and (max-width: 1320px) {
+  .Work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+      margin-bottom: 50px;
+    }
+    .Work-img-1 {
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+      margin-bottom: 50px;
+    }
+    .Work-img-2 {
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+      margin-bottom: 50px;
+    }
+    .Work-img-3 {
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+      margin-bottom: 50px;
+    }
+    .Work-img-4 {
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+      margin-bottom: 50px;
+    }
+    .See-all-projects {
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+    }
   }
 }

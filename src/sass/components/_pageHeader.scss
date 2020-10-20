@@ -13,9 +13,9 @@
     letter-spacing: normal;
     color: #1d1d1d;
     display: inline-block;
-    flex-shrink: 0;
+    //flex-shrink: 0;
     white-space: normal;
-    width: 720px;
+    max-width: 720px;
     height: 168px;
   }
   .Header2 {
@@ -32,5 +32,14 @@
     flex-shrink: 0;
     margin-left: 200px;
     margin-bottom: 60px;
+  }
+}
+
+@media only screen and (max-width: 1200px){
+  .Header-title{
+    .Header1{
+      font-size: 50px;
+      margin-left: 20px;
+    }
   }
 }

@@ -1,6 +1,6 @@
 .Deep-light {
   display: block;
-  width: 501px;
+  max-width: 501px;
   height: 90px;
   margin-left: 210px;
   font-family: swansea;
@@ -11,4 +11,10 @@
   line-height: 1.5;
   letter-spacing: normal;
   color: $secondary;
+}
+
+@media only screen and (max-width: 750px){
+  .Deep-light{
+    font-size: 15px;
+  }
 }

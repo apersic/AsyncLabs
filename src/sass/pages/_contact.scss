@@ -1,13 +1,13 @@
 .Form-container {
   width: 100%;
-  height: 640px;
+  min-height: 640px;
   display: flex;
   margin-top: 110px;
   padding-left: 113px;
   padding-right: 113px;
   .Contact-form {
     width: 100%;
-    height: 640px;
+    min-height: 640px;
     padding-left: 60px;
     padding-right: 120px;
     padding-top: 77px;
@@ -60,7 +60,6 @@
         }
         .label-textarea {
           font-family: swansea;
-          //visibility: hidden;
           position: absolute;
           top: 25%;
           left: 15px;
@@ -103,6 +102,20 @@
       margin-top: 10px;
       margin-left: 10px;
       visibility: hidden;
+    }
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .Form-container {
+    .Contact-form {
+      .field {
+        flex-direction: column;
+      }
+      .Submit-button {
+        width: 110px;
+        height: 60px;
+      }
     }
   }
 }
